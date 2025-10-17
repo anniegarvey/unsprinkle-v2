@@ -1,11 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const getResponsiveImageURLs = (src, type) => [`.${type} 1x`, `@2x.${type} 2x`, `@3x.${type} 3x`].map(
+  suffix => src.replace('.jpg', suffix)
+).join(',');
+
 const PhotoGridItem = ({ id, src, alt, tags }) => {
   return (
     <article>
       <Anchor href={`/photos/${id}`}>
-        <Image src={src} />
+        <picture>
+          <source srcSet={getResponsiveImageURLs(src,'avif')} />
+          <source srcSet={'jpg'} />
+          <Image src={src} />
+        </picture>
       </Anchor>
       <Tags>
         {tags.map((tag) => (
