@@ -12,7 +12,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
         <picture>
           <source srcSet={getResponsiveImageURLs(src,'avif')} />
           <source srcSet={'jpg'} />
-          <Image src={src} />
+          <Image src={src} alt={alt} />
         </picture>
       </Anchor>
       <Tags>
