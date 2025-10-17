@@ -36,24 +36,23 @@ const Image = styled.img`
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 `;
 
 const Tags = styled.ul`
-  display: flex;
-  gap: 8px;
+  overflow-x: clip;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Tag = styled.li`
+  display: inline;
   padding: 4px 8px;
+  margin-right: 8px;
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
   color: var(--color-gray-800);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
 `;
 
 export default PhotoGridItem;
